@@ -1,0 +1,18 @@
+void PMTIdentified::calculate_boltid(){  //function in the calss PMTIdentified
+  float angle_between_bolts = 360.0 / 24;  //we have 24 bolts in total.
+  float dang = angle_between_bolts/2;  //basically 7.5
+
+
+
+  for ( float angle : angles ){ 
+//loops over all the bolts in pmt. angles is array of angle made by bolt with ^ axis. Be careful how the image coordinate system (down for y and right for x) but we calculated angle with (up) using ( float theta = atan2f((x-a),-(y-b)); )
+
+    int boltnum = int( (angle+dang) / angle_between_bolts ) + 1;
+    if (boltnum==25) boltnum=1;
+    boltid.push_back( boltnum );
+    // calculate difference in angle from boltid angle
+    float boltidang = (boltnum-1) * angle_between_bolts;
+    float da = angle - boltidang;
+    if ( da > 360.0-dang ) da -= 360.0;
+    dangs.push_back( da );
+  } 
