@@ -1,3 +1,7 @@
+# This is modification of Michael's code. I have only modified part of it.
+# I have only made modification to featurelabelling_copy/interPhotoLabelling/interPhotoLabelling.ipynb
+# Original code can be found in Michael's github.
+
 # featureLabelling
 Scripts and samples for labelling features, given 2D input points and camera pose.
 
